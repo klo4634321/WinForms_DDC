@@ -36,6 +36,9 @@
             this.C_btn = new System.Windows.Forms.Button();
             this.CValue_now = new System.Windows.Forms.Label();
             this.C_TrackBar = new System.Windows.Forms.TrackBar();
+            this.modeA = new System.Windows.Forms.Button();
+            this.modeB = new System.Windows.Forms.Button();
+            this.modeC = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.B_TrackBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.C_TrackBar)).BeginInit();
             this.SuspendLayout();
@@ -114,11 +117,44 @@
             this.C_TrackBar.TabIndex = 5;
             this.C_TrackBar.Scroll += new System.EventHandler(this.trackBar2_Scroll);
             // 
+            // modeA
+            // 
+            this.modeA.Location = new System.Drawing.Point(299, 37);
+            this.modeA.Name = "modeA";
+            this.modeA.Size = new System.Drawing.Size(75, 23);
+            this.modeA.TabIndex = 9;
+            this.modeA.Text = "Mode A";
+            this.modeA.UseVisualStyleBackColor = true;
+            this.modeA.Click += new System.EventHandler(this.modeA_Click);
+            // 
+            // modeB
+            // 
+            this.modeB.Location = new System.Drawing.Point(299, 66);
+            this.modeB.Name = "modeB";
+            this.modeB.Size = new System.Drawing.Size(75, 23);
+            this.modeB.TabIndex = 10;
+            this.modeB.Text = "Mode B";
+            this.modeB.UseVisualStyleBackColor = true;
+            this.modeB.Click += new System.EventHandler(this.modeB_Click);
+            // 
+            // modeC
+            // 
+            this.modeC.Location = new System.Drawing.Point(299, 95);
+            this.modeC.Name = "modeC";
+            this.modeC.Size = new System.Drawing.Size(75, 23);
+            this.modeC.TabIndex = 11;
+            this.modeC.Text = "Mode C";
+            this.modeC.UseVisualStyleBackColor = true;
+            this.modeC.Click += new System.EventHandler(this.modeC_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.modeC);
+            this.Controls.Add(this.modeB);
+            this.Controls.Add(this.modeA);
             this.Controls.Add(this.CValue_set);
             this.Controls.Add(this.C_btn);
             this.Controls.Add(this.CValue_now);
@@ -147,6 +183,9 @@
         private System.Windows.Forms.Button C_btn;
         private System.Windows.Forms.Label CValue_now;
         private System.Windows.Forms.TrackBar C_TrackBar;
+        private System.Windows.Forms.Button modeA;
+        private System.Windows.Forms.Button modeB;
+        private System.Windows.Forms.Button modeC;
     }
 }
 

@@ -66,6 +66,9 @@ namespace WinForms_DDC
                     MessageBox.Show("錯誤：" + errors);
                 }
             }
+            GlobalFunc.Instance.BValue = brightnessValue;
+            BValue_now.Text = "目前亮度: " + GlobalFunc.Instance.BValue.ToString();
+            
         }
 
         private void SetContrastPython(int ContrastValue)
@@ -91,6 +94,9 @@ namespace WinForms_DDC
                     MessageBox.Show("錯誤：" + errors);
                 }
             }
+
+            GlobalFunc.Instance.CValue = ContrastValue;
+            CValue_now.Text = "目前對比度: " + GlobalFunc.Instance.CValue.ToString();
         }
 
         // 當按下按鈕時，根據 TrackBar 的值設置亮度
@@ -231,6 +237,24 @@ namespace WinForms_DDC
             GlobalFunc.Instance.CValue = ConstactValue;
             CValue_now.Text = "目前對比度: " + GlobalFunc.Instance.CValue.ToString();
 
+        }
+
+        private void modeA_Click(object sender, EventArgs e)
+        {
+            SetBrightnessPython(0);
+            SetContrastPython(0);
+        }
+
+        private void modeB_Click(object sender, EventArgs e)
+        {
+            SetBrightnessPython(0);
+            SetContrastPython(50);
+        }
+
+        private void modeC_Click(object sender, EventArgs e)
+        {
+            SetBrightnessPython(100);
+            SetContrastPython(100);
         }
     }
 }
