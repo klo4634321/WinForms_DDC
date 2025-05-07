@@ -39,6 +39,7 @@
             this.modeA = new System.Windows.Forms.Button();
             this.modeB = new System.Windows.Forms.Button();
             this.modeC = new System.Windows.Forms.Button();
+            this.switchForm2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.B_TrackBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.C_TrackBar)).BeginInit();
             this.SuspendLayout();
@@ -147,11 +148,22 @@
             this.modeC.UseVisualStyleBackColor = true;
             this.modeC.Click += new System.EventHandler(this.modeC_Click);
             // 
+            // switchForm2
+            // 
+            this.switchForm2.Location = new System.Drawing.Point(286, 197);
+            this.switchForm2.Name = "switchForm2";
+            this.switchForm2.Size = new System.Drawing.Size(88, 23);
+            this.switchForm2.TabIndex = 12;
+            this.switchForm2.Text = "開啟畫面調整";
+            this.switchForm2.UseVisualStyleBackColor = true;
+            this.switchForm2.Click += new System.EventHandler(this.switchForm2_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(441, 273);
+            this.Controls.Add(this.switchForm2);
             this.Controls.Add(this.modeC);
             this.Controls.Add(this.modeB);
             this.Controls.Add(this.modeA);
@@ -186,6 +198,7 @@
         private System.Windows.Forms.Button modeA;
         private System.Windows.Forms.Button modeB;
         private System.Windows.Forms.Button modeC;
+        private System.Windows.Forms.Button switchForm2;
     }
 }
 

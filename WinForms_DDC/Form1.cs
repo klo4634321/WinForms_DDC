@@ -256,5 +256,11 @@ namespace WinForms_DDC
             SetBrightnessPython(100);
             SetContrastPython(100);
         }
+
+        private void switchForm2_Click(object sender, EventArgs e)
+        {
+            Form2 form2 = new Form2(); // 建立 Form2 的實例
+            form2.Show();
+        }
     }
 }
