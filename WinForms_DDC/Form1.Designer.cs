@@ -154,7 +154,7 @@
             this.switchForm2.Name = "switchForm2";
             this.switchForm2.Size = new System.Drawing.Size(88, 23);
             this.switchForm2.TabIndex = 12;
-            this.switchForm2.Text = "開啟畫面調整";
+            this.switchForm2.Text = "開啟yolo偵測";
             this.switchForm2.UseVisualStyleBackColor = true;
             this.switchForm2.Click += new System.EventHandler(this.switchForm2_Click);
             // 

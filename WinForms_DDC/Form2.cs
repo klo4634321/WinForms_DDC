@@ -19,16 +19,28 @@ namespace WinForms_DDC
 {
     public partial class Form2 : Form
     {
+
+        private Timer timer;
+
+
         public Form2()
         {
             InitializeComponent();
             StartPythonServer();
             PictureBoxLoading();
+            this.Load += Form2_Load;
+            this.FormClosing += Form2_FormClosing;
         }
 
-        
+        private void Form2_Load(object sender, EventArgs e)
+        {
+            pictureBox1.Dock = DockStyle.Fill;
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+        }
 
-    void StartPythonServer()
+
+
+        void StartPythonServer()
         {
             var psi = new ProcessStartInfo
             {
@@ -45,7 +57,7 @@ namespace WinForms_DDC
         void PictureBoxLoading()
         {
             HttpClient httpClient = new HttpClient();
-            Timer timer = new Timer();
+            timer = new Timer();
             timer.Interval = 100; // 每 100ms 抓一次
             timer.Tick += async (s, e) =>
             {
@@ -66,6 +78,15 @@ namespace WinForms_DDC
                 }
             };
             timer.Start();
+        }
+        private void Form2_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (timer != null)
+            {
+                timer.Stop();
+                timer.Dispose();
+                timer = null;
+            }
         }
 
 
