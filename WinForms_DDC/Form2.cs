@@ -13,6 +13,7 @@ using System.Windows.Forms;
 using System.Net.Http;
 using System.IO;
 using System.Net;
+using System.Text.Json;
 
 namespace WinForms_DDC
 {
@@ -32,7 +33,7 @@ namespace WinForms_DDC
             var psi = new ProcessStartInfo
             {
                 FileName = "..\\..\\..\\python\\.venv\\Scripts\\python",  // ← 請填入你的 python.exe 路徑
-                Arguments = $"..\\..\\..\\python\\screen_stream.py",  // ← 相對或絕對路徑皆可
+                Arguments = $"..\\..\\..\\python\\yoloDetect.py",  // ← 相對或絕對路徑皆可
                 RedirectStandardOutput = true,
                 RedirectStandardError = true,
                 UseShellExecute = false,
@@ -50,7 +51,8 @@ namespace WinForms_DDC
             {
                 try
                 {
-                    var bytes = await httpClient.GetByteArrayAsync("http://localhost:5003/current");
+                    var bytes = await httpClient.GetByteArrayAsync("http://localhost:5000/detect");
+                    Console.WriteLine($"Received {bytes.Length} bytes from Flask"); // 顯示接收到的位元組數
                     using (var ms = new MemoryStream(bytes))
                     {
                         if (pictureBox1.Image != null)
@@ -60,11 +62,14 @@ namespace WinForms_DDC
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("Error: " + ex.Message);
+                    Console.WriteLine("Error: " + ex.Message); // 捕獲錯誤
                 }
             };
             timer.Start();
         }
+
+
+
 
 
 

@@ -1,2 +1,7 @@
 screen-brightness-control
 monitorcontrol
+flask
+Opencv-python
+mss
+torch
+pillow
