@@ -5,3 +5,5 @@ Opencv-python
 mss
 torch
 pillow
+pandas
+requests
